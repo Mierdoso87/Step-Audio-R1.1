@@ -49,28 +49,40 @@ Step-Audio-R1.1 is a state-of-the-art audio language model that combines **real-
 
 ## 🚀 Quick Start
 
-### Option 1: Docker (Recommended)
+### Step 1: Download Model (Required, ~65GB)
+
+```bash
+# Method 1: Git LFS (Recommended)
+git lfs install
+git clone https://huggingface.co/stepfun-ai/Step-Audio-R1.1
+
+# Method 2: Hugging Face CLI
+pip install huggingface_hub
+huggingface-cli download stepfun-ai/Step-Audio-R1.1 --local-dir ./Step-Audio-R1.1
+```
+
+### Step 2: Run with Docker
 
 ```bash
 # Pull the all-in-one image
 docker pull neosun/step-audio-r1.1:latest
 
-# Run (requires model files mounted)
+# Run (mount the model directory)
 docker run --gpus all \
-  -v /path/to/Step-Audio-R1.1:/model:ro \
+  -v $(pwd)/Step-Audio-R1.1:/model:ro \
   -p 9100:9100 \
   -p 9101:9999 \
   neosun/step-audio-r1.1:latest
 ```
 
-### Option 2: Docker Compose
+### Alternative: Docker Compose
 
 ```bash
 # Clone the repository
-git clone https://github.com/neosu/Step-Audio-R1.1.git
+git clone https://github.com/neosun100/Step-Audio-R1.1.git
 cd Step-Audio-R1.1
 
-# Download model (requires ~65GB)
+# Download model (if not already done)
 git lfs install
 git clone https://huggingface.co/stepfun-ai/Step-Audio-R1.1
 

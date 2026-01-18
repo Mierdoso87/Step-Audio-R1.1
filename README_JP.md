@@ -49,28 +49,40 @@ Step-Audio-R1.1は、**リアルタイム応答性**と**強力な推論能力**
 
 ## 🚀 クイックスタート
 
-### 方法1：Docker（推奨）
+### ステップ1：モデルをダウンロード（必須、約65GB）
+
+```bash
+# 方法1：Git LFS（推奨）
+git lfs install
+git clone https://huggingface.co/stepfun-ai/Step-Audio-R1.1
+
+# 方法2：Hugging Face CLI
+pip install huggingface_hub
+huggingface-cli download stepfun-ai/Step-Audio-R1.1 --local-dir ./Step-Audio-R1.1
+```
+
+### ステップ2：Dockerで実行
 
 ```bash
 # オールインワンイメージをプル
 docker pull neosun/step-audio-r1.1:latest
 
-# 実行（モデルファイルのマウントが必要）
+# 実行（モデルディレクトリをマウント）
 docker run --gpus all \
-  -v /path/to/Step-Audio-R1.1:/model:ro \
+  -v $(pwd)/Step-Audio-R1.1:/model:ro \
   -p 9100:9100 \
   -p 9101:9999 \
   neosun/step-audio-r1.1:latest
 ```
 
-### 方法2：Docker Compose
+### または Docker Compose を使用
 
 ```bash
 # リポジトリをクローン
-git clone https://github.com/neosu/Step-Audio-R1.1.git
+git clone https://github.com/neosun100/Step-Audio-R1.1.git
 cd Step-Audio-R1.1
 
-# モデルをダウンロード（約65GB）
+# モデルをダウンロード（まだの場合）
 git lfs install
 git clone https://huggingface.co/stepfun-ai/Step-Audio-R1.1
 

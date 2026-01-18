@@ -49,28 +49,40 @@ Step-Audio-R1.1 是一款先進的音訊語言模型，結合了**即時回應�
 
 ## 🚀 快速開始
 
-### 方式一：Docker（推薦）
+### 第一步：下載模型（必需，約65GB）
+
+```bash
+# 方法1：Git LFS（推薦）
+git lfs install
+git clone https://huggingface.co/stepfun-ai/Step-Audio-R1.1
+
+# 方法2：Hugging Face CLI
+pip install huggingface_hub
+huggingface-cli download stepfun-ai/Step-Audio-R1.1 --local-dir ./Step-Audio-R1.1
+```
+
+### 第二步：Docker 執行
 
 ```bash
 # 拉取一體化映像
 docker pull neosun/step-audio-r1.1:latest
 
-# 執行（需要掛載模型檔案）
+# 執行（掛載模型目錄）
 docker run --gpus all \
-  -v /path/to/Step-Audio-R1.1:/model:ro \
+  -v $(pwd)/Step-Audio-R1.1:/model:ro \
   -p 9100:9100 \
   -p 9101:9999 \
   neosun/step-audio-r1.1:latest
 ```
 
-### 方式二：Docker Compose
+### 或使用 Docker Compose
 
 ```bash
 # 複製儲存庫
-git clone https://github.com/neosu/Step-Audio-R1.1.git
+git clone https://github.com/neosun100/Step-Audio-R1.1.git
 cd Step-Audio-R1.1
 
-# 下載模型（約65GB）
+# 下載模型（如果還沒下載）
 git lfs install
 git clone https://huggingface.co/stepfun-ai/Step-Audio-R1.1
 
