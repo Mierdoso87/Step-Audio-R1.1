@@ -92,6 +92,25 @@ docker compose up -d
 
 Access the Web UI at: **http://localhost:9100**
 
+### One-Click Start Script
+
+For convenience, use the auto-start script that finds the model automatically:
+
+```bash
+# Run from anywhere
+./start-step-audio.sh
+
+# Or install globally
+sudo cp start-step-audio.sh /usr/local/bin/step-audio
+step-audio
+```
+
+The script will:
+- Auto-detect model location
+- Restart stopped containers
+- Pull image if needed
+- Wait for service ready
+
 ---
 
 ## 📦 Installation
