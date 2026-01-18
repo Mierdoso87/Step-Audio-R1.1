@@ -1,0 +1,302 @@
+{
+  "standard": {
+    "5min": {
+      "asr": {
+        "success": true,
+        "elapsed": 64.76092052459717,
+        "answer_len": 4352,
+        "thinking_len": 3066
+      },
+      "s2t": {
+        "success": true,
+        "elapsed": 34.27438497543335,
+        "answer_len": 2682,
+        "thinking_len": 2398
+      },
+      "translate": {
+        "success": true,
+        "elapsed": 62.896024227142334,
+        "answer_len": 924,
+        "thinking_len": 4619
+      },
+      "summarize": {
+        "success": true,
+        "elapsed": 26.208879470825195,
+        "answer_len": 898,
+        "thinking_len": 2772
+      },
+      "understand": {
+        "success": true,
+        "elapsed": 64.80362939834595,
+        "answer_len": 4356,
+        "thinking_len": 4556
+      }
+    },
+    "10min": {
+      "asr": {
+        "success": true,
+        "elapsed": 66.48028588294983,
+        "answer_len": 5776,
+        "thinking_len": 2660
+      },
+      "s2t": {
+        "success": true,
+        "elapsed": 45.03076434135437,
+        "answer_len": 3192,
+        "thinking_len": 3012
+      },
+      "translate": {
+        "success": true,
+        "elapsed": 66.57236671447754,
+        "answer_len": 6686,
+        "thinking_len": 0
+      },
+      "summarize": {
+        "success": true,
+        "elapsed": 43.11721587181091,
+        "answer_len": 2385,
+        "thinking_len": 3746
+      },
+      "understand": {
+        "success": true,
+        "elapsed": 66.59695219993591,
+        "answer_len": 4883,
+        "thinking_len": 4090
+      }
+    },
+    "30min": {
+      "asr": {
+        "success": true,
+        "elapsed": 78.69692850112915,
+        "answer_len": 33,
+        "thinking_len": 8773
+      },
+      "s2t": {
+        "success": true,
+        "elapsed": 55.238771200180054,
+        "answer_len": 3424,
+        "thinking_len": 3406
+      },
+      "translate": {
+        "success": true,
+        "elapsed": 78.58038449287415,
+        "answer_len": 2782,
+        "thinking_len": 1790
+      },
+      "summarize": {
+        "success": true,
+        "elapsed": 32.88846158981323,
+        "answer_len": 1223,
+        "thinking_len": 2259
+      },
+      "understand": {
+        "success": true,
+        "elapsed": 77.28597784042358,
+        "answer_len": 5819,
+        "thinking_len": 4015
+      }
+    },
+    "60min": {
+      "asr": {
+        "success": true,
+        "elapsed": 46.535006523132324,
+        "answer_len": 203,
+        "thinking_len": 3190
+      },
+      "s2t": {
+        "success": true,
+        "elapsed": 74.42195296287537,
+        "answer_len": 4954,
+        "thinking_len": 2887
+      },
+      "translate": {
+        "success": true,
+        "elapsed": 91.47949814796448,
+        "answer_len": 2813,
+        "thinking_len": 1200
+      },
+      "summarize": {
+        "success": true,
+        "elapsed": 56.564202308654785,
+        "answer_len": 1265,
+        "thinking_len": 4126
+      },
+      "understand": {
+        "success": true,
+        "elapsed": 91.58556246757507,
+        "answer_len": 5119,
+        "thinking_len": 5213
+      }
+    },
+    "85min": {
+      "asr": {
+        "success": true,
+        "elapsed": 65.18476390838623,
+        "answer_len": 1181,
+        "thinking_len": 3780
+      },
+      "s2t": {
+        "success": true,
+        "elapsed": 66.2754454612732,
+        "answer_len": 3337,
+        "thinking_len": 2200
+      },
+      "translate": {
+        "success": true,
+        "elapsed": 65.32106971740723,
+        "answer_len": 831,
+        "thinking_len": 3408
+      },
+      "summarize": {
+        "success": true,
+        "elapsed": 45.30332136154175,
+        "answer_len": 1014,
+        "thinking_len": 2574
+      },
+      "understand": {
+        "success": true,
+        "elapsed": 64.66133689880371,
+        "answer_len": 3563,
+        "thinking_len": 2924
+      }
+    }
+  },
+  "long_audio": {
+    "172min": {
+      "asr": {
+        "success": true,
+        "elapsed": 180.2285554409027,
+        "answer_len": 10857,
+        "segments": 3,
+        "segment_results": [
+          [
+            0,
+            179.34035396575928,
+            true,
+            4592
+          ],
+          [
+            1,
+            180.2176809310913,
+            true,
+            4542
+          ],
+          [
+            2,
+            160.33936953544617,
+            true,
+            1668
+          ]
+        ]
+      },
+      "s2t": {
+        "success": true,
+        "elapsed": 151.59711813926697,
+        "answer_len": 10125,
+        "segments": 3,
+        "segment_results": [
+          [
+            0,
+            142.57402920722961,
+            true,
+            3255
+          ],
+          [
+            1,
+            151.58705353736877,
+            true,
+            3792
+          ],
+          [
+            2,
+            146.2836720943451,
+            true,
+            3023
+          ]
+        ]
+      },
+      "translate": {
+        "success": true,
+        "elapsed": 180.80758953094482,
+        "answer_len": 6182,
+        "segments": 3,
+        "segment_results": [
+          [
+            0,
+            180.79669046401978,
+            true,
+            2684
+          ],
+          [
+            1,
+            126.74098420143127,
+            true,
+            848
+          ],
+          [
+            2,
+            179.91894364356995,
+            true,
+            2595
+          ]
+        ]
+      },
+      "summarize": {
+        "success": true,
+        "elapsed": 144.9043390750885,
+        "answer_len": 7555,
+        "segments": 3,
+        "segment_results": [
+          [
+            0,
+            144.89381623268127,
+            true,
+            2490
+          ],
+          [
+            1,
+            141.75809383392334,
+            true,
+            2376
+          ],
+          [
+            2,
+            139.37314915657043,
+            true,
+            2634
+          ]
+        ]
+      },
+      "understand": {
+        "success": true,
+        "elapsed": 186.85903978347778,
+        "answer_len": 18080,
+        "segments": 3,
+        "segment_results": [
+          [
+            0,
+            186.84923195838928,
+            true,
+            5021
+          ],
+          [
+            1,
+            183.71533226966858,
+            true,
+            6492
+          ],
+          [
+            2,
+            177.69842004776,
+            true,
+            6512
+          ]
+        ]
+      }
+    }
+  },
+  "meta": {
+    "start_time": "2026-01-18T14:04:21.584694",
+    "end_time": "2026-01-18T14:44:42.381159"
+  }
+}

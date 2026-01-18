@@ -1,0 +1,62 @@
+# Step-Audio-R1.1 All-in-One Docker Image
+# 包含 vLLM 推理服务 + Web UI + API + 智能音频处理器
+# 
+# 使用方法:
+#   docker run --gpus all -v /path/to/model:/model -p 9100:9100 -p 9101:9999 neosun/step-audio-r1.1:latest
+#
+FROM stepfun2025/vllm:step-audio-2-v20250909
+
+LABEL maintainer="neosun"
+LABEL version="1.1.0"
+LABEL description="Step-Audio-R1.1 All-in-One: vLLM + Web UI + API"
+
+WORKDIR /app
+
+# Install dependencies
+RUN pip install --no-cache-dir --ignore-installed \
+    flask==3.0.0 \
+    flask-cors==4.0.0 \
+    flasgger==0.9.7.1 \
+    pydub==0.25.1 \
+    gunicorn==21.2.0 \
+    supervisor==4.2.5
+
+# Install ffmpeg for audio processing
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ffmpeg \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy application code
+COPY app.py /app/
+COPY stepaudior1vllm.py /app/
+COPY smart_audio_processor.py /app/
+COPY static/ /app/static/
+COPY templates/ /app/templates/
+
+# Copy configuration files
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY start_vllm.sh /app/start_vllm.sh
+COPY entrypoint.sh /app/entrypoint.sh
+
+# Create necessary directories and set permissions
+RUN mkdir -p /app/uploads /app/request_logs /tmp/step-audio-r1 /var/log/supervisor && \
+    chmod +x /app/start_vllm.sh /app/entrypoint.sh
+
+# Environment variables
+ENV FLASK_APP=app.py
+ENV PYTHONUNBUFFERED=1
+ENV TENSOR_PARALLEL_SIZE=4
+ENV MAX_MODEL_LEN=65536
+ENV MAX_NUM_SEQS=4
+ENV GPU_MEMORY_UTILIZATION=0.85
+
+# Expose ports
+# 9100: Web UI + API
+# 9999: vLLM OpenAI-compatible API
+EXPOSE 9100 9999
+
+# Health check
+HEALTHCHECK --interval=60s --timeout=30s --start-period=300s --retries=5 \
+    CMD curl -sf http://localhost:9999/health && curl -sf http://localhost:9100/health || exit 1
+
+ENTRYPOINT ["/app/entrypoint.sh"]

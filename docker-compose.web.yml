@@ -1,0 +1,18 @@
+services:
+  # Web UI + API Service (standalone mode)
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: step-audio-r1-web
+    environment:
+      - VLLM_API_URL=${VLLM_API_URL:-http://host.docker.internal:9999/v1/chat/completions}
+      - MODEL_NAME=Step-Audio-R1.1
+      - PORT=9100
+    ports:
+      - "0.0.0.0:${WEB_PORT:-9100}:9100"
+    volumes:
+      - /tmp/step-audio-r1:/tmp/step-audio-r1
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped

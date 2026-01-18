@@ -1,0 +1,83 @@
+[
+  {
+    "audio": "5min.wav",
+    "mode": "s2t",
+    "status": "success",
+    "elapsed": 66.86,
+    "answer_len": 1736,
+    "thinking_len": 1132,
+    "size_mb": 9.2
+  },
+  {
+    "audio": "10min.wav",
+    "mode": "s2t",
+    "status": "success",
+    "elapsed": 53.32,
+    "answer_len": 2055,
+    "thinking_len": 3196,
+    "size_mb": 18.3
+  },
+  {
+    "audio": "30min.wav",
+    "mode": "s2t",
+    "status": "success",
+    "elapsed": 76.17,
+    "answer_len": 2789,
+    "thinking_len": 3024,
+    "size_mb": 54.9
+  },
+  {
+    "audio": "60min.wav",
+    "mode": "s2t",
+    "status": "success",
+    "elapsed": 70.44,
+    "answer_len": 1727,
+    "thinking_len": 814,
+    "size_mb": 109.9
+  },
+  {
+    "audio": "85min.wav",
+    "mode": "s2t",
+    "status": "success",
+    "elapsed": 71.14,
+    "answer_len": 2639,
+    "thinking_len": 0,
+    "size_mb": 155.3
+  },
+  {
+    "audio": "5min.wav",
+    "mode": "asr",
+    "status": "success",
+    "elapsed": 44.31,
+    "answer_len": 1770,
+    "thinking_len": 697,
+    "size_mb": 9.2
+  },
+  {
+    "audio": "5min.wav",
+    "mode": "understand",
+    "status": "success",
+    "elapsed": 43.71,
+    "answer_len": 1584,
+    "thinking_len": 972,
+    "size_mb": 9.2
+  },
+  {
+    "audio": "5min.wav",
+    "mode": "translate",
+    "status": "success",
+    "elapsed": 63.63,
+    "answer_len": 2134,
+    "thinking_len": 7342,
+    "size_mb": 9.2
+  },
+  {
+    "audio": "5min.wav",
+    "mode": "summarize",
+    "status": "success",
+    "elapsed": 24.06,
+    "answer_len": 1387,
+    "thinking_len": 2335,
+    "size_mb": 9.2
+  }
+]
